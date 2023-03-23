@@ -1,6 +1,7 @@
 module.exports = {
   parser: 'babel-eslint',
   extends: ['airbnb', 'plugin:prettier/recommended'],
+  
   env: {
     browser: true,
     jest: true,
@@ -10,6 +11,12 @@ module.exports = {
     'import/core-modules': ['styled-jsx', 'styled-jsx/css'],
   },
   rules: {
+    'prettier/prettier':[  //or whatever plugin that is causing the clash
+            'error',
+            {
+                'tabWidth':4
+            }
+        ],
     'max-len': ['error', 150],
     'react/jsx-props-no-spreading': 'off',
     'no-plusplus': 'off',
